@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+    $("h1,h2,p").addClass("blue");
+    $("#test1").addClass("important");
+    $("#test2").addClass("important blue");
+  });
+  $("#button2").click(function(){
+  	$("#test2").removeClass("important blue");
+  });
+  $("#button3").click(function(){
+  	$("#test2").toggleClass("important blue");
+  });
+});
+</script>
+<style type="text/css">
+.important
+{
+	font-weight:bold;
+	font-size:xx-large;
+}
+.blue
+{
+	color:blue;
+}
+</style>
+</head>
+<body>
+
+<h1>标题 1</h1>
+<h2>标题 2</h2>
+<p>这是一个段落。</p>
+<p>这是另外一个段落。</p>
+<div id="test1">这是一些重要的文本!</div>
+<div id="test2">这是一些重要的文本!</div>
+<br>
+<button id="button1">为元素添加 class</button>
+<button id="button2">为元素去除 class</button>
+<button id="button3">为元素添加/去除 class</button>
+</body>
+</html>

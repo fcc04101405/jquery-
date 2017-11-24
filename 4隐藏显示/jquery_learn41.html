@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("#test1").hide(50);
+  });
+  $("#show").click(function(){
+    $("#test1").show(1000);
+  });
+  $("#toggle").click(function(){
+    $("#test1").toggle(500);
+  });
+});
+</script>
+</head>
+<body>
+
+<p id="test1">点隐藏我隐藏</p>
+<button id="hide">隐藏</button><button id="show">显示</button>
+<button id="toggle">隐藏／显示</button>
+</body>
+</html>

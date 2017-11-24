@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+星号选择器（*）表示选中所有的元素
+* 选择器选取所有元素。
+* 选择器也能选取另一个元素中的所有元素：
+div *{ 
+    background-color:green;
+}
+上面的代码会将div下面的所有元素的背景色设置为绿色
+注意：*选择器比较消耗性能，尽量避免使用，应使用更加精确的选择器选择元素
+-->
+<style>
+.ancestors *
+{ 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("span").parent().css({"color":"red","border":"2px solid red"});
+  $("#button1").click(function(){
+  	$("span").parents().css({"color":"red","border":"2px solid red"});
+  	});
+  $("#button2").click(function(){
+  	$("span").parents("ul").css({"color":"red","border":"2px solid red"});
+  	});
+  $("#button3").click(function(){
+  	$("span").parentsUntil("body").css({"color":"red","border":"2px solid red"});
+  	});
+});
+</script>
+</head>
+<body>
+
+<div class="ancestors">
+  <div style="width:500px;">div (曾祖父元素)
+    <ul>ul (祖父元素)  
+      <li>li (父元素)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div style="width:500px;">div (祖父元素)   
+    <p>p (父元素)
+        <span>span</span>
+      </p> 
+  </div>
+</div>
+<button id="button1">全部父元素</button>
+<button id="button2">ul父元素</button>
+<button id="button3">body父元素之下的父元素</button>
+</body>
+</html>

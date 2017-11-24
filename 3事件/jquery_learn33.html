@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<!--同时可以尝试mouseleave/mousedown/mouseup/hover/focus/blur等方法
+hover()方法用于模拟光标悬停事件。
+当鼠标移动到元素上时，会触发指定的第一个函数(mouseenter);当鼠标移出这个元素时，会触发指定的第二个函数
+focus()
+当元素获得焦点时，发生 focus 事件。
+当通过鼠标点击选中元素或通过 tab 键定位到元素时，该元素就会获得焦点。
+focus() 方法触发 focus 事件，或规定当发生 focus 事件时运行的函数：
+blur()
+当元素失去焦点时，发生 blur 事件。
+blur() 方法触发 blur 事件，或规定当发生 blur 事件时运行的函数：
+-->
+<script>
+$(document).ready(function(){
+  $("#test").mouseenter(function(){
+    alert('我被碰到了～～～～');
+  });
+});
+</script>
+</head>
+<body>
+<p id="test">碰我一下试试</p>
+</body>
+</html>

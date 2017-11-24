@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+.siblings *
+{ 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#button1").click(function(){
+		$("div").children().css({"color":"lightgrey","border":"2px solid lightgrey"});
+		})
+	$("#button2").click(function(){
+		$("div p").first().css({"color":"red","border":"2px solid red"});
+		})
+	$("#button3").click(function(){
+		$("div p").last().css({"color":"red","border":"2px solid red"});
+		})
+	$("#button4").click(function(){
+		$("div p").eq(1).css({"color":"red","border":"2px solid red"});
+		})
+	$("#button5").click(function(){
+		$("div p").filter(".url").css({"color":"red","border":"2px solid red"});
+		})
+	$("#button6").click(function(){
+		$("div p").not(".url").css({"color":"red","border":"2px solid red"});
+		})
+});
+</script>
+<!--
+not() 方法返回不匹配标准的所有元素。not() 方法与 filter() 相反。
+-->
+</head>
+<body>
+
+<div class="siblings">div (父元素)
+  <p>p</p>
+  <span>span</span>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <h4>h4</h4>
+  <h5>h5</h5>
+  <h6>h6</h6>
+  <p class="url">p</p>
+</div>
+<div class="siblings">div (父元素)
+  <p>p</p>
+  <span>span</span>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <h4>h4</h4>
+  <h5>h5</h5>
+  <h6>h6</h6>
+  <p class="url">p</p>
+</div>
+<button id="button1">复原</button>
+<button id="button2">选取首个 div 元素内部的第一个 p 元素</button>
+<button id="button3">选择最后一个 div 元素中的最后一个 p 元素</button>
+<button id="button4">选取第二个 p 元素</button>
+<button id="button5">返回带有类名 "url" 的所有 p 元素</button>
+<button id="button6">返回带有类名不是 "url" 的所有 p 元素</button>
+</body>
+</html>

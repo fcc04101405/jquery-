@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+  $("#button1").click(function(){
+    $("#test1").animate({
+      left:'250px',
+      opacity:'0.5',
+      height:'150px',
+      width:'150px'
+    });
+  });
+  $("#button2").click(function(){
+    $("#test2").animate({
+      left:'250px',
+      opacity:'0.5',
+      height:'+=150px',
+      width:'+=150px'
+    });
+  });
+  $("#button3").click(function(){
+    $("#test3").animate({
+      height:'toggle'
+    },"slow");
+    });
+  $("#button4").click(function(){
+    var div=$("#test4");
+    div.animate({height:'show'},"slow");
+    div.animate({height:'300px',opacity:'0.2'},"slow");
+    div.animate({width:'300px',opacity:'0.4'},"slow");
+    div.animate({height:'100px',opacity:'0.2'},"slow");
+    div.animate({width:'100px',opacity:'1.0'},"slow");
+    div.animate({height:'hide'},"slow");
+    });
+  $("#button5").click(function(){
+    var div=$("#test5");
+    div.animate({height:'show'},"slow");
+    div.animate({height:'300px',opacity:'0.2'},"slow");
+    div.animate({fontSize:'5em'},"slow")
+    div.animate({width:'300px',opacity:'0.4'},"slow");
+    div.animate({height:'100px',opacity:'0.2'},"slow");
+    div.animate({width:'100px',opacity:'1.0'},"slow");
+    div.animate({height:'hide'},"slow");
+    });
+});
+</script> 
+</head>
+<body>
+<button id="button1">开始动画1</button>
+<button id="button2">开始动画2</button>
+<button id="button3">开始动画3</button>
+<button id="button4">开始动画4</button>
+<button id="button5">开始动画5</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。 
+如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div id="test1" style="background:#98bf21;height:100px;width:100px;position:relative;"></div>
+<div id="test2" style="background:#98bf21;height:100px;width:100px;position:relative;"></div>
+<div id="test3" style="background:#98bf21;height:100px;width:100px;position:relative;"></div>
+<div id="test4" style="background:#98bf21;height:100px;width:100px;position:relative;"></div>
+<div id="test5" style="background:#98bf21;height:100px;width:100px;position:relative;">lalala</div>
+</body>
+</html>
